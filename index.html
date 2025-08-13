@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SEO and PWA example for fast, offline-capable website">
+  <meta name="keywords" content="SEO, PWA, Progressive Web App, Web Optimization">
+  <meta name="author" content="Your Name">
+  
+  <title>SEO & PWA Example</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SEO & PWA Example">
+  <meta property="og:description" content="A simple example combining SEO and PWA features">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:image" content="https://yourwebsite.com/assets/icon-512.png">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#317EFB">
+  <link rel="icon" href="assets/icon-192.png" type="image/png">
+
+  <!-- Add some structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SEO & PWA Example",
+    "url": "https://yourwebsite.com"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to SEO & PWA Example</h1>
+    <p>This page is optimized for search engines and works offline!</p>
+  </header>
+  
+  <main>
+    <h2>Features:</h2>
+    <ul>
+      <li>SEO Friendly</li>
+      <li>Progressive Web App Ready</li>
+      <li>Offline Support</li>
+    </ul>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker Registered'));
+    }
+  </script>
+</body>
+</html>
+
