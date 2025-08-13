@@ -43,7 +43,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ description }}">
-    <meta name="keywords" content="PWA, SEO, website, blog">
+    <meta name="keywords" content="blog, posts, articles">
     <meta name="author" content="Your Name">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="{{ title }}">
@@ -59,7 +59,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to SETEC Institute</h1>
+        <h1>Search</h1>
         <nav>
             <a href="/">Home</a>
             <a href="/Blog">Blog</a>
@@ -68,12 +68,18 @@
     </header>
     <main>
         <section>
-            <h2>Last New</h2>
-            <p>Your future in Technology and Design starts here. Explore our programs and see what's new at our campus</p>
+            <h2>Latest Posts</h2>
+            {% for post in posts %}
+                <article>
+                    <h3><a href="/blog/{{ post.id }}">{{ post.title }}</a></h3>
+                    <p>{{ post.content[:100] }}...</p>
+                    <small>Posted on {{ post.date }}</small>
+                </article>
+            {% endfor %}
         </section>
     </main>
     <footer>
-        <p>&copy; SETEC Institute. All Rights Reserved.</p>
+        <p>&copy; 2025 Your Website. All rights reserved.</p>
     </footer>
     <script>
         if ('serviceWorker' in navigator) {
